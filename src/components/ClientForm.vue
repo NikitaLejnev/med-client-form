@@ -1,26 +1,7 @@
 <script setup>
 import { reactive } from 'vue'
 import useVuelidate from '@vuelidate/core'
-import {
-  required,
-  helpers,
-  minLength,
-  maxLength,
-  alpha,
-} from '@vuelidate/validators'
-
-const isValidDate = (date) => {
-  const currentDate = new Date();
-  const endYear = currentDate.getFullYear();
-  const endMonth = currentDate.getMonth() + 1;
-  const endDay = currentDate.getDate();
-  const endDate = `${endYear}-${endMonth}-${endDay}`
-  return date.length === 10 && date > '1900-01-01' && date <= endDate
-}
-
-const isValidPhoneNumber = (number) => (
-  !helpers.req(number) || number.indexOf(7) === 0
-)
+import { rules } from '../utils/validate'
 
 const state = reactive({
   firstName: '',
@@ -44,34 +25,6 @@ const state = reactive({
   issuer: '',
   issueDate: undefined,
 })
-
-const rules = {
-  firstName: {
-    required: helpers.withMessage('Укажите имя', required),
-    alpha: helpers.withMessage('В имени должны быть только буквы')
-  },
-  lastName: {
-    required: helpers.withMessage('Укажите фамилию', required),
-    alpha: helpers.withMessage('В фамилии должны быть только буквы')
-  },
-  birthDate: {
-    required: helpers.withMessage('Укажите дату рождения', required),
-    isValidDate: helpers.withMessage('Укажите корректную дату рождения', isValidDate),
-  },
-  phoneNumber: {
-    required: helpers.withMessage('Укажите номер телефона', required),
-    minLength: helpers.withMessage('В номере телефона меньше 11 цифр', minLength(11)),
-    maxLength: helpers.withMessage('В номере телефона больше 11 цифр', maxLength(11)),
-    isValidPhoneNumber: helpers.withMessage('Номер телефона должен начинаться с цифры 7', isValidPhoneNumber)
-  },
-  clientGroup: { required: helpers.withMessage('Укажите группу клиента', required) },
-  city: {
-    required: helpers.withMessage('Укажите город', required),
-    alpha: helpers.withMessage('В названии города должны быть только буквы')
-  },
-  documentType: { required: helpers.withMessage('Укажите тип документа', required) },
-  issueDate: { required: helpers.withMessage('Укажите дату выдачи документа', required) },
-}
 
 const v$ = useVuelidate(rules, state, { $autoDirty: true })
 
