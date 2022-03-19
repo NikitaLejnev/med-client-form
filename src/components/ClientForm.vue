@@ -1,5 +1,6 @@
 <script setup>
 import PersonalDataFields from './subcomponents/PersonalDataFields.vue';
+import AdressFields from './subcomponents/AdressFields.vue';
 </script>
 
 <template>
@@ -9,5 +10,6 @@ import PersonalDataFields from './subcomponents/PersonalDataFields.vue';
 
   <main>
     <PersonalDataFields />
+    <AdressFields />
   </main>
 </template>
