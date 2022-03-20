@@ -1,33 +1,10 @@
 <script setup>
-import { reactive } from 'vue'
 import useVuelidate from '@vuelidate/core'
 import { rules } from '../utils/validate'
+import { state } from '../utils/store'
 import PersonalFields from './PersonalFields.vue';
 import AdressFields from './AdressFields.vue';
 import DocumentFields from './DocumentFields.vue';
-
-const state = reactive({
-  firstName: '',
-  lastName: '',
-  patronym: '',
-  birthDate: '',
-  phoneNumber: '7',
-  gender: undefined,
-  clientGroup: [],
-  doctor: undefined,
-  noSms: false,
-  zipCode: undefined,
-  country: '',
-  region: '',
-  city: '',
-  street: '',
-  house: undefined,
-  documentType: undefined,
-  serialNumber: undefined,
-  documentNumber: undefined,
-  issuer: '',
-  issueDate: undefined,
-})
 
 const v$ = useVuelidate(rules, state, { $autoDirty: true })
 
