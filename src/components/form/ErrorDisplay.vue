@@ -1,5 +1,5 @@
 <script setup>
-import { v$ } from '../utils/validate'
+import { v$ } from '../../utils/validate'
 </script>
 
 <template>

@@ -1,11 +1,11 @@
 <script setup>
 import useVuelidate from '@vuelidate/core'
 import { v$ } from '../utils/validate'
-import PersonalFields from './PersonalFields.vue';
-import AdressFields from './AdressFields.vue';
-import DocumentFields from './DocumentFields.vue';
-import SubmitButton from './SubmitButton.vue';
-import ErrorDisplay from './ErrorDisplay.vue';
+import PersonalFields from './form/PersonalFields.vue';
+import AdressFields from './form/AdressFields.vue';
+import DocumentFields from './form/DocumentFields.vue';
+import SubmitButton from './form/SubmitButton.vue';
+import ErrorDisplay from './form/ErrorDisplay.vue';
 
 </script>
 

@@ -1,5 +1,5 @@
 <script setup>
-import { state } from '../utils/store'
+import { state } from '../../utils/store'
 </script>
 
 <template>
