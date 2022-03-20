@@ -5,6 +5,7 @@ import PersonalFields from './PersonalFields.vue';
 import AdressFields from './AdressFields.vue';
 import DocumentFields from './DocumentFields.vue';
 import SubmitButton from './SubmitButton.vue';
+import ErrorDisplay from './ErrorDisplay.vue';
 
 </script>
 
@@ -15,9 +16,7 @@ import SubmitButton from './SubmitButton.vue';
 
   <main>
     <form @submit.prevent="async () => { await this.v$.$validate() }">
-      <p v-for="error of v$.$errors" :key="error.$uid">
-        <strong>{{ error.$message }}</strong>
-      </p>
+      <ErrorDisplay />
       <PersonalFields />
       <AdressFields />
       <DocumentFields />
