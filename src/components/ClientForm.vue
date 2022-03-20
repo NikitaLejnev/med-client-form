@@ -1,12 +1,9 @@
 <script setup>
 import useVuelidate from '@vuelidate/core'
-import { rules } from '../utils/validate'
-import { state } from '../utils/store'
+import { v$ } from '../utils/validate'
 import PersonalFields from './PersonalFields.vue';
 import AdressFields from './AdressFields.vue';
 import DocumentFields from './DocumentFields.vue';
-
-const v$ = useVuelidate(rules, state, { $autoDirty: true })
 
 </script>
 
@@ -20,9 +17,9 @@ const v$ = useVuelidate(rules, state, { $autoDirty: true })
       <p v-for="error of v$.$errors" :key="error.$uid">
         <strong>{{ error.$message }}</strong>
       </p>
-      <PersonalFields :state="state" />
-      <AdressFields :state="state" />
-      <DocumentFields :state="state" />
+      <PersonalFields />
+      <AdressFields />
+      <DocumentFields />
       <button>Создать</button>
     </form>
   </main>

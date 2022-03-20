@@ -1,3 +1,4 @@
+// move v$ here
 import useVuelidate from '@vuelidate/core'
 import {
   required,
@@ -6,6 +7,7 @@ import {
   maxLength,
   alpha,
 } from "@vuelidate/validators";
+import { state } from '../utils/store'
 
 const isValidDate = (date) => {
   const currentDate = new Date();
@@ -20,7 +22,7 @@ const isValidPhoneNumber = (number) => (
   !helpers.req(number) || number.indexOf(7) === 0
 )
 
-export const rules = {
+const rules = {
   firstName: {
     required: helpers.withMessage("Укажите имя", required),
     alpha: helpers.withMessage("В имени должны быть только буквы", alpha),
@@ -68,3 +70,5 @@ export const rules = {
     required: helpers.withMessage("Укажите дату выдачи документа", required),
   },
 };
+
+export const v$ = useVuelidate(rules, state, { $autoDirty: true })
