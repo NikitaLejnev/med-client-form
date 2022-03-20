@@ -1,0 +1,31 @@
+<script setup>
+const props = defineProps(['state'])
+</script>
+
+<template>
+  <div class="field">
+    <label for="document-type">Тип документа</label>
+    <select id="document-type" v-model="props.state.documentType">
+      <option value>--Пожалуйста выберите тип документа</option>
+      <option value="passport">Паспорт</option>
+      <option value="birth-certificate">Свидетельство о рождении</option>
+      <option value="driver-license">Водительское удостоверение</option>
+    </select>
+  </div>
+  <div class="field">
+    <label for="serial-number">Серия</label>
+    <input v-model="props.state.serialNumber" id="serial-number" />
+  </div>
+  <div class="field">
+    <label for="document-number">Номер</label>
+    <input v-model="props.state.documentNumber" id="document-number" />
+  </div>
+  <div class="field">
+    <label for="issuer">Кем выдан</label>
+    <input v-model="props.state.issuer" id="issuer" />
+  </div>
+  <div class="field">
+    <label for="issue-date">Дата выдачи</label>
+    <input type="date" v-model="props.state.issueDate" id="issue-date" />
+  </div>
+</template>
