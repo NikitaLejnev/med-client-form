@@ -3,6 +3,7 @@ import { reactive } from 'vue'
 import useVuelidate from '@vuelidate/core'
 import { rules } from '../utils/validate'
 import PersonalFields from './PersonalFields.vue';
+import AdressFields from './AdressFields.vue';
 
 const state = reactive({
   firstName: '',
@@ -42,30 +43,7 @@ const v$ = useVuelidate(rules, state, { $autoDirty: true })
         <strong>{{ error.$message }}</strong>
       </p>
       <PersonalFields :state="state" />
-      <div class="field">
-        <label for="zip-code">Индекс</label>
-        <input v-model="state.zipCode" id="zip-code" />
-      </div>
-      <div class="field">
-        <label for="country">Страна</label>
-        <input id="country" v-model="state.country" />
-      </div>
-      <div class="field">
-        <label for="region">Область</label>
-        <input id="region" v-model="state.region" />
-      </div>
-      <div class="field">
-        <label for="city">Город</label>
-        <input id="city" v-model="state.city" />
-      </div>
-      <div class="field">
-        <label for="street">Улица</label>
-        <input id="street" v-model="state.street" />
-      </div>
-      <div class="field">
-        <label for="house">Дом</label>
-        <input v-model="state.house" id="house" />
-      </div>
+      <AdressFields :state="state" />
       <div class="field">
         <label for="document-type">Тип документа</label>
         <select id="document-type" v-model="state.documentType">
