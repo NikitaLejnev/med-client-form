@@ -4,6 +4,7 @@ import { v$ } from '../utils/validate'
 import PersonalFields from './PersonalFields.vue';
 import AdressFields from './AdressFields.vue';
 import DocumentFields from './DocumentFields.vue';
+import SubmitButton from './SubmitButton.vue';
 
 </script>
 
@@ -20,7 +21,7 @@ import DocumentFields from './DocumentFields.vue';
       <PersonalFields />
       <AdressFields />
       <DocumentFields />
-      <button>Создать</button>
+      <SubmitButton />
     </form>
   </main>
 </template>
