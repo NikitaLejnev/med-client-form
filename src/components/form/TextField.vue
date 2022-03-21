@@ -6,7 +6,7 @@ defineEmits(['update:modelValue'])
 
 <template>
   <div class="input-group">
-    <label class="form-label" :for="id">
+    <label :for="id">
       <slot>{{ labelName }}</slot>
     </label>
     <input

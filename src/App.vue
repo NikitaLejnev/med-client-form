@@ -7,5 +7,5 @@ import ClientForm from './components/ClientForm.vue';
 </template>
 
 <style>
-@import "./assets/base.css";
+@import "./assets/css/styles.css";
 </style>
