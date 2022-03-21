@@ -10,9 +10,8 @@ import { documentFields } from '../../utils/helpers'
   </header>
   <main>
     <div class="input-group">
-      <label class="form-label" for="document-type">Тип документа</label>
-      <select id="document-type" v-model="state.documentType">
-        <option value>--Пожалуйста выберите тип документа</option>
+      <label class="form-label select-label" for="document-type">Тип документа</label>
+      <select class="input-select" id="document-type" v-model="state.documentType">
         <option value="passport">Паспорт</option>
         <option value="birth-certificate">Свидетельство о рождении</option>
         <option value="driver-license">Водительское удостоверение</option>
@@ -23,7 +22,7 @@ import { documentFields } from '../../utils/helpers'
     </div>
     <div class="input-group">
       <label class="form-label" for="issue-date">Дата выдачи</label>
-      <input type="date" v-model="state.issueDate" id="issue-date" />
+      <input class="text-field" type="date" v-model="state.issueDate" id="issue-date" />
     </div>
   </main>
 </template>

@@ -16,10 +16,10 @@ import ErrorDisplay from './form/ErrorDisplay.vue';
 
     <main class="card-body">
       <form @submit.prevent="async () => { await this.v$.$validate() }">
-        <ErrorDisplay />
         <PersonalFields />
         <AdressFields />
         <DocumentFields />
+        <ErrorDisplay />
         <SubmitButton />
       </form>
     </main>

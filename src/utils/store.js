@@ -10,7 +10,7 @@ export const state = reactive({
   clientGroup: [],
   doctor: undefined,
   noSms: false,
-  zipCode: undefined,
+  zipCode: '',
   country: '',
   region: '',
   city: '',
@@ -20,5 +20,5 @@ export const state = reactive({
   serialNumber: undefined,
   documentNumber: undefined,
   issuer: '',
-  issueDate: undefined,
+  issueDate: '',
 })

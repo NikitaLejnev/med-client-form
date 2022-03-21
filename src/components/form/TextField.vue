@@ -10,6 +10,7 @@ defineEmits(['update:modelValue'])
       <slot>{{ labelName }}</slot>
     </label>
     <input
+      class="text-field"
       :value="modelValue"
       @input="$emit('update:modelValue', $event.target.value)"
       :id="id"
