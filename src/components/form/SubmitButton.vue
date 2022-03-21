@@ -2,5 +2,5 @@
 </script>
 
 <template>
-  <button>Создать</button>
+  <button class="btn btn-primary">Создать</button>
 </template>
