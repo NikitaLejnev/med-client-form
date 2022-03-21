@@ -1,15 +1,11 @@
 <script setup>
 import { state } from '../../utils/store'
+import { personalFields } from '../../utils/helpers'
 import TextField from './TextField.vue';
-const fields = [
-  { label: 'Имя', property: 'firstName', id: 'first-name' },
-  { label: 'Фамилия', property: 'lastName', id: 'last-name' },
-  { label: 'Отчество', property: 'patronym', id: 'patronym' },
-]
 </script>
 
 <template>
-  <div v-for="field in fields" :key="field.id">
+  <div v-for="field in personalFields" :key="field.id">
     <TextField v-bind="field" v-model="state[field.property]">{{ field.label }}</TextField>
   </div>
   <div class="input-group">
