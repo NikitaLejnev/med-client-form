@@ -5,7 +5,12 @@ import TextField from './TextField.vue';
 </script>
 
 <template>
-  <div v-for="field in adressFields" :key="field.id">
-    <TextField v-bind="field" v-model="state[field.property]">{{ field.label }}</TextField>
-  </div>
+  <header>
+    <h2>Адрес</h2>
+  </header>
+  <main>
+    <div v-for="field in adressFields" :key="field.id">
+      <TextField v-bind="field" v-model="state[field.property]">{{ field.label }}</TextField>
+    </div>
+  </main>
 </template>
