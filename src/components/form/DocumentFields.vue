@@ -1,5 +1,11 @@
 <script setup>
 import { state } from '../../utils/store'
+import TextField from './TextField.vue';
+const fields = [
+  { label: 'Серия', property: 'serialNumber', id: 'serial-number' },
+  { label: 'Номер', property: 'documentNumber', id: 'document-number' },
+  { label: 'Кем выдан', property: 'issuer', id: 'issuer' },
+]
 </script>
 
 <template>
@@ -12,17 +18,8 @@ import { state } from '../../utils/store'
       <option value="driver-license">Водительское удостоверение</option>
     </select>
   </div>
-  <div class="input-group">
-    <label class="form-label" for="serial-number">Серия</label>
-    <input v-model="state.serialNumber" id="serial-number" />
-  </div>
-  <div class="input-group">
-    <label class="form-label" for="document-number">Номер</label>
-    <input v-model="state.documentNumber" id="document-number" />
-  </div>
-  <div class="input-group">
-    <label class="form-label" for="issuer">Кем выдан</label>
-    <input v-model="state.issuer" id="issuer" />
+  <div v-for="field in fields" :key="field.id">
+    <TextField v-bind="field" v-model="state[field.property]">{{ field.label }}</TextField>
   </div>
   <div class="input-group">
     <label class="form-label" for="issue-date">Дата выдачи</label>

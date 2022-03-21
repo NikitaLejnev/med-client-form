@@ -1,19 +1,16 @@
 <script setup>
 import { state } from '../../utils/store'
+import TextField from './TextField.vue';
+const fields = [
+  { label: 'Имя', property: 'firstName', id: 'first-name' },
+  { label: 'Фамилия', property: 'lastName', id: 'last-name' },
+  { label: 'Отчество', property: 'patronym', id: 'patronym' },
+]
 </script>
 
 <template>
-  <div class="input-group">
-    <label class="form-label" for="first-name">Имя</label>
-    <input v-model="state.firstName" id="first-name" spellcheck="false" />
-  </div>
-  <div class="input-group">
-    <label class="form-label" for="last-name">Фамилия</label>
-    <input v-model="state.lastName" id="last-name" spellcheck="false" />
-  </div>
-  <div class="input-group">
-    <label class="form-label" for="patronym">Отчество</label>
-    <input v-model="state.patronym" id="patronym" spellcheck="false" />
+  <div v-for="field in fields" :key="field.id">
+    <TextField v-bind="field" v-model="state[field.property]">{{ field.label }}</TextField>
   </div>
   <div class="input-group">
     <label class="form-label" for="birth-date">Дата рождения</label>
@@ -24,11 +21,11 @@ import { state } from '../../utils/store'
     <input type="tel" v-model="state.phoneNumber" id="phone-number" />
   </div>
   <div class="input-group">
-      <label class="form-label">Пол</label>
-      <input type="radio" v-model="state.gender" id="male" value="male" />
-      <label class="form-label" for="male">Мужчина</label>
-      <input type="radio" v-model="state.gender" id="female" value="female" />
-      <label class="form-label" for="female">Женщина</label>
+    <label class="form-label">Пол</label>
+    <input type="radio" v-model="state.gender" id="male" value="male" />
+    <label class="form-label" for="male">Мужчина</label>
+    <input type="radio" v-model="state.gender" id="female" value="female" />
+    <label class="form-label" for="female">Женщина</label>
   </div>
   <div class="input-group">
     <label class="form-label" for="client-group">Группа клиентов</label>
