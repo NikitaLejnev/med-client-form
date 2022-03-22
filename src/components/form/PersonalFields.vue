@@ -63,7 +63,7 @@ import ErrorDisplay from "./ErrorDisplay.vue";
     </div>
     <ErrorDisplay property="clientGroup" />
     <div class="input-group">
-      <label class="select-label mr-1" for="doctor">Лечащий врач</label>
+      <label class="select-label" for="doctor">Лечащий врач</label>
       <select v-model="state.doctor" id="doctor" name="doctor">
         <option value="ivanov">Иванов</option>
         <option value="zaharov">Захаров</option>
@@ -71,7 +71,7 @@ import ErrorDisplay from "./ErrorDisplay.vue";
       </select>
     </div>
     <div class="input-group">
-      <label class="mr-1" for="no-sms">Не отправлять СМС</label>
+      <label for="no-sms">Не отправлять СМС</label>
       <input
         class="checkbox"
         type="checkbox"
