@@ -1,11 +1,9 @@
 <script setup>
-import { v$ } from '../utils/validate'
-import PersonalFields from './form/PersonalFields.vue';
-import AdressFields from './form/AdressFields.vue';
-import DocumentFields from './form/DocumentFields.vue';
-import SubmitButton from './form/SubmitButton.vue';
-import ErrorDisplay from './form/ErrorDisplay.vue';
-
+import { v$ } from "../utils/validate";
+import PersonalFields from "./form/PersonalFields.vue";
+import AdressFields from "./form/AdressFields.vue";
+import DocumentFields from "./form/DocumentFields.vue";
+import SubmitButton from "./form/SubmitButton.vue";
 </script>
 
 <template>
@@ -15,11 +13,16 @@ import ErrorDisplay from './form/ErrorDisplay.vue';
     </header>
 
     <main class="card-body">
-      <form @submit.prevent="async () => { await this.v$.$validate() }">
+      <form
+        @submit.prevent="
+          async () => {
+            await this.v$.$validate();
+          }
+        "
+      >
         <PersonalFields />
         <AdressFields />
         <DocumentFields />
-        <ErrorDisplay />
         <SubmitButton />
       </form>
     </main>

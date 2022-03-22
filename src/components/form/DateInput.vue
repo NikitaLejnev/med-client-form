@@ -1,6 +1,7 @@
 <script setup>
-defineProps(['id', 'modelValue'])
-defineEmits(['update:modelValue'])
+import ErrorDisplay from "./ErrorDisplay.vue";
+defineProps(["id", "modelValue", "property"]);
+defineEmits(["update:modelValue"]);
 </script>
 
 <template>
@@ -15,5 +16,6 @@ defineEmits(['update:modelValue'])
       @input="$emit('update:modelValue', $event.target.value)"
       :id="id"
     />
+    <ErrorDisplay :property="property" />
   </div>
 </template>
