@@ -2,6 +2,7 @@
 import { state } from '../../utils/store'
 import TextField from './TextField.vue';
 import { documentFields } from '../../utils/helpers'
+import DateInput from './DateInput.vue';
 </script>
 
 <template>
@@ -20,9 +21,6 @@ import { documentFields } from '../../utils/helpers'
     <div v-for="field in documentFields" :key="field.id">
       <TextField v-bind="field" v-model="state[field.property]">{{ field.label }}</TextField>
     </div>
-    <div class="input-group">
-      <label for="issue-date">Дата выдачи</label>
-      <input class="text-field" type="date" v-model="state.issueDate" id="issue-date" />
-    </div>
+    <DateInput id="issue-date" v-model="state.issueDate">Дата выдачи</DateInput>
   </main>
 </template>

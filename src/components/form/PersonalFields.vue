@@ -2,6 +2,7 @@
 import { state } from '../../utils/store'
 import { personalFields } from '../../utils/helpers'
 import TextField from './TextField.vue';
+import DateInput from './DateInput.vue';
 </script>
 
 <template>
@@ -12,15 +13,12 @@ import TextField from './TextField.vue';
     <div v-for="field in personalFields" :key="field.id">
       <TextField v-bind="field" v-model="state[field.property]">{{ field.label }}</TextField>
     </div>
-    <div class="input-group">
-      <label for="birth-date">Дата рождения</label>
-      <input class="input-date" type="date" v-model="state.birthDate" id="birth-date" />
-    </div>
+    <DateInput id="birth-date" v-model="state.birthDate">Дата рождения</DateInput>
     <div class="input-group">
       <label for="phone-number">Номер телефона</label>
       <input class="text-field" type="tel" v-model="state.phoneNumber" id="phone-number" />
     </div>
-    <div class="input-group ">
+    <div class="input-group space-between">
       <label class="form-label">Пол</label>
       <input class="radio-button" type="radio" v-model="state.gender" id="male" value="male" />
       <label class="radio-button-label" for="male">Мужчина</label>
