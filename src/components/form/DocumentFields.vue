@@ -18,8 +18,8 @@ import ErrorDisplay from "./ErrorDisplay.vue";
         <option value="birth-certificate">Свидетельство о рождении</option>
         <option value="driver-license">Водительское удостоверение</option>
       </select>
-      <ErrorDisplay property="documentType" />
     </div>
+    <ErrorDisplay property="documentType" />
     <div v-for="field in documentFields" :key="field.id">
       <TextField v-bind="field" v-model="state[field.property]">{{
         field.label

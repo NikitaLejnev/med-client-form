@@ -27,9 +27,9 @@ import ErrorDisplay from "./ErrorDisplay.vue";
         v-model="state.phoneNumber"
         id="phone-number"
       />
-      <ErrorDisplay property="phoneNumber" />
     </div>
-    <div class="input-group space-between">
+    <ErrorDisplay property="phoneNumber" />
+    <div class="input-group">
       <label class="form-label">Пол</label>
       <input
         class="radio-button"
@@ -60,8 +60,8 @@ import ErrorDisplay from "./ErrorDisplay.vue";
         <option value="problem">Проблемные</option>
         <option value="oms">ОМС</option>
       </select>
-      <ErrorDisplay property="clientGroup" />
     </div>
+    <ErrorDisplay property="clientGroup" />
     <div class="input-group">
       <label class="select-label mr-1" for="doctor">Лечащий врач</label>
       <select v-model="state.doctor" id="doctor" name="doctor">

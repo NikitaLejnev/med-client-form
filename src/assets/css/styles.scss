@@ -112,6 +112,7 @@ label {
 .alert {
   position: relative;
   padding: 1rem 1rem;
+  margin-top: 1rem;
   margin-bottom: 1rem;
   border: 1px solid transparent;
   border-radius: 0.25rem;
@@ -131,9 +132,6 @@ label {
   margin-left: 1rem;
 }
 
-.space-between {
-  justify-content: space-between;
-}
 
 /*# sourceMappingURL=styles.scss.map */
 /*# sourceMappingURL=styles.scss.map */

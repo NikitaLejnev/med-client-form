@@ -16,6 +16,6 @@ defineEmits(["update:modelValue"]);
       @input="$emit('update:modelValue', $event.target.value)"
       :id="id"
     />
-    <ErrorDisplay :property="property" />
   </div>
+  <ErrorDisplay :property="property" />
 </template>
