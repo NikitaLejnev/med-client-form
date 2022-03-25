@@ -1,10 +1,9 @@
 <script setup>
-import { v$ } from "../../utils/validate";
-defineProps(["property"]);
+const props = defineProps(["v$", "property"]);
 </script>
 
 <template>
-  <div v-if="v$[property]?.$errors">
+  <div v-if="props.v$[property]?.$errors">
     <div
       class="alert alert-danger"
       v-for="error of v$[property].$errors"

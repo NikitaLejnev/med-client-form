@@ -1,6 +1,6 @@
 <script setup>
 import ErrorDisplay from "./ErrorDisplay.vue";
-defineProps(["id", "modelValue", "property", "label"]);
+defineProps(["v$", "id", "modelValue", "property", "label"]);
 defineEmits(["update:modelValue"]);
 </script>
 
@@ -16,5 +16,5 @@ defineEmits(["update:modelValue"]);
       :id="id"
     />
   </div>
-  <ErrorDisplay :property="property" />
+  <ErrorDisplay :v$="v$" :property="property" />
 </template>

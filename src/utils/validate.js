@@ -1,5 +1,4 @@
-// move v$ here
-import useVuelidate from '@vuelidate/core'
+import useVuelidate from "@vuelidate/core";
 import {
   required,
   helpers,
@@ -7,20 +6,21 @@ import {
   maxLength,
   alpha,
 } from "@vuelidate/validators";
-import { state } from '../utils/store'
+import { state } from "../utils/store";
 
 const isValidDate = (date) => {
-  const currentDate = new Date();
-  const endYear = currentDate.getFullYear();
-  const endMonth = currentDate.getMonth() + 1;
-  const endDay = currentDate.getDate();
-  const endDate = `${endYear}-${endMonth}-${endDay}`
-  return date.length === 10 && date > '1900-01-01' && date <= endDate
-}
+  if (date && date !== "") {
+    const currentDate = new Date();
+    const endYear = currentDate.getFullYear();
+    const endMonth = currentDate.getMonth() + 1;
+    const endDay = currentDate.getDate();
+    const endDate = `${endYear}-${endMonth}-${endDay}`;
+    return date.length === 10 && date > "1900-01-01" && date <= endDate;
+  }
+};
 
-const isValidPhoneNumber = (number) => (
-  !helpers.req(number) || number.indexOf(7) === 0
-)
+const isValidPhoneNumber = (number) =>
+  !helpers.req(number) || number.indexOf(7) === 0;
 
 const rules = {
   firstName: {
@@ -68,7 +68,11 @@ const rules = {
   },
   issueDate: {
     required: helpers.withMessage("Укажите дату выдачи документа", required),
+    isValidDate: helpers.withMessage(
+      "Укажите корректную дату выдачи документа",
+      isValidDate
+    ),
   },
 };
 
-export const v$ = useVuelidate(rules, state, { $autoDirty: true })
+export const v$ = useVuelidate(rules, state, { $autoDirty: true });

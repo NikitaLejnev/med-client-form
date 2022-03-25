@@ -13,17 +13,11 @@ import SubmitButton from "./form/SubmitButton.vue";
     </header>
 
     <main class="card-body">
-      <form
-        @submit.prevent="
-          async () => {
-            await this.v$.$validate();
-          }
-        "
-      >
+      <form>
         <PersonalFields />
-        <AdressFields />
+        <!-- <AdressFields />
         <DocumentFields />
-        <SubmitButton />
+        <SubmitButton /> -->
       </form>
     </main>
   </div>
