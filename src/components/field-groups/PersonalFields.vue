@@ -8,6 +8,13 @@ import ErrorDisplay from "./form-components/ErrorDisplay.vue";
 import NextStepButton from "./form-components/NextStepButton.vue";
 import RequiredIndicator from "./form-components/RequiredIndicator.vue";
 const emit = defineEmits(["stepCompleted"]);
+const onSubmit = async () => {
+  const isValid = await v$.value.$validate();
+  if (!isValid) {
+    return;
+  }
+  emit("stepCompleted");
+};
 </script>
 
 <template>
@@ -15,17 +22,7 @@ const emit = defineEmits(["stepCompleted"]);
     <h2>Личные данные</h2>
   </header>
   <main>
-    <form
-      @submit.prevent="
-        async () => {
-          const isValid = await this.v$.$validate();
-          if (!isValid) {
-            return;
-          }
-          emit('stepCompleted');
-        }
-      "
-    >
+    <form @submit.prevent="onSubmit">
       <div v-for="field in personalFields" :key="field.id">
         <TextField :v$="v$" v-bind="field" v-model="state[field.property]">{{
           field.label

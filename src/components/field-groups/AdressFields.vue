@@ -5,6 +5,13 @@ import { v$ } from "../../validations/adressFields";
 import TextField from "./form-components/TextField.vue";
 import NextStepButton from "./form-components/NextStepButton.vue";
 const emit = defineEmits(["stepCompleted"]);
+async function onSubmit() {
+  const isValid = await v$.value.$validate();
+  if (!isValid) {
+    return;
+  }
+  emit("stepCompleted");
+}
 </script>
 
 <template>
@@ -12,17 +19,7 @@ const emit = defineEmits(["stepCompleted"]);
     <h2>Адрес</h2>
   </header>
   <main>
-    <form
-      @submit.prevent="
-        async () => {
-          const isValid = await this.v$.$validate();
-          if (!isValid) {
-            return;
-          }
-          emit('stepCompleted');
-        }
-      "
-    >
+    <form @submit.prevent="onSubmit">
       <div v-for="field in adressFields" :key="field.id">
         <TextField :v$="v$" v-bind="field" v-model="state[field.property]">{{
           field.label

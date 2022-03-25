@@ -20,7 +20,9 @@ const goToNextStep = () => {
     </header>
 
     <main class="card-body">
-      <small><RequiredIndicator />- поле обязательно к заполнению</small>
+      <small v-if="state.currentStep !== 4"
+        ><RequiredIndicator />- поле обязательно к заполнению</small
+      >
       <PersonalFields
         @step-completed="goToNextStep"
         v-if="state.currentStep === 1"
