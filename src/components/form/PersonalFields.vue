@@ -1,7 +1,7 @@
 <script setup>
-import { state } from "../../utils/store";
+import { state } from "../../store/personalFields";
 import { personalFields } from "../../utils/helpers";
-import { v$ } from "../../validations/personalFieldsValidation";
+import { v$ } from "../../validations/personalFields";
 import TextField from "./TextField.vue";
 import DateInput from "./DateInput.vue";
 import ErrorDisplay from "./ErrorDisplay.vue";

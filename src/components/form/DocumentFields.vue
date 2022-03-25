@@ -1,6 +1,6 @@
 <script setup>
-import { state } from "../../utils/store";
 import { documentFields } from "../../utils/helpers";
+import { state } from "../../store/documentFields";
 import { v$ } from "../../validations/documentFields";
 import TextField from "./TextField.vue";
 import DateInput from "./DateInput.vue";

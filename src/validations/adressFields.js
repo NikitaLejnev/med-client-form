@@ -1,6 +1,6 @@
 import useVuelidate from "@vuelidate/core";
 import { required, helpers, alpha } from "@vuelidate/validators";
-import { state } from "../utils/store";
+import { state } from "../store/adressFields";
 
 const rules = {
   city: {

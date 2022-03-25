@@ -1,6 +1,6 @@
 import useVuelidate from "@vuelidate/core";
 import { required, helpers } from "@vuelidate/validators";
-import { state } from "../utils/store";
+import { state } from "../store/documentFields";
 
 const isValidDate = (date) => {
   if (date && date !== "") {

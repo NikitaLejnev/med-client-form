@@ -1,5 +1,5 @@
 <script setup>
-import { state } from "../../utils/store";
+import { state } from "../../store/adressFields";
 import { adressFields } from "../../utils/helpers";
 import { v$ } from "../../validations/adressFields";
 import TextField from "./TextField.vue";

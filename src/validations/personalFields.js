@@ -6,7 +6,7 @@ import {
   maxLength,
   alpha,
 } from "@vuelidate/validators";
-import { state } from "../utils/store";
+import { state } from "../store/personalFields";
 
 const isValidDate = (date) => {
   if (date && date !== "") {
