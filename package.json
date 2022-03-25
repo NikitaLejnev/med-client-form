@@ -1,7 +1,7 @@
 {
   "name": "med-client-form",
   "version": "0.0.0",
-  "homepage": "https://nikitalejnev.github.io/med-client-form/",
+  "homepage": "http://nikitalejnev.github.io/med-client-form/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
