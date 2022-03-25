@@ -11,7 +11,6 @@ defineEmits(["update:modelValue"]);
     </label>
     <input
       type="date"
-      class="date-field"
       :value="modelValue"
       @input="$emit('update:modelValue', $event.target.value)"
       :id="id"

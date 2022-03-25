@@ -20,7 +20,6 @@ const rules = {
     alpha: helpers.withMessage("В фамилии должны быть только буквы", alpha),
   },
   birthDate: {
-    required: helpers.withMessage("Укажите дату рождения", required),
     isValidDate: helpers.withMessage(
       "Укажите корректную дату рождения",
       isValidDate

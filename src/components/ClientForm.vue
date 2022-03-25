@@ -13,7 +13,7 @@ const goToNextStep = () => {
 </script>
 
 <template>
-  <div class="col-8 card">
+  <div class="col-8-m col-12-s card">
     <header class="card-title">
       <h1>Создать клиента</h1>
     </header>

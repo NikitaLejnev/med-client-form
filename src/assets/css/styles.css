@@ -12,17 +12,30 @@ html {
   font-size: 20px;
 }
 
-.col-8 {
-  width: 66.7%;
-  flex: 0 0 auto;
-  padding-top: 0rem;
-  padding-bottom: 0.5rem;
-  padding-right: 1rem;
-  padding-left: 1rem;
-  margin-right: auto;
-  margin-left: auto;
+@media screen and (min-width: 800px) {
+  .col-8-m {
+    width: 66.7%;
+    flex: 0 0 auto;
+    padding-top: 0rem;
+    padding-bottom: 0.5rem;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    margin-right: auto;
+    margin-left: auto;
+  }
 }
-
+@media screen and (max-width: 800px) {
+  .col-12-s {
+    width: 100%;
+    flex: 0 0 auto;
+    padding-top: 0rem;
+    padding-bottom: 0.5rem;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
 .card {
   position: relative;
   display: flex;
