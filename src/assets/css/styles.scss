@@ -112,7 +112,7 @@ form {
 input {
   font-size: 20px;
   border-radius: 0.25rem;
-  border: 1px solid;
+  border: 1px solid #ced4da;
   margin: 0.5rem 0;
   padding: 0.25rem 0.5rem;
   align-items: flex-end;
@@ -175,8 +175,6 @@ button {
 .alert {
   position: relative;
   padding: 1rem 1rem;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
   border: 1px solid transparent;
   border-radius: 0.25rem;
 }
