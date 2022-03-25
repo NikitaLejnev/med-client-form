@@ -1,6 +1,6 @@
 import { helpers } from "@vuelidate/validators";
 export const isValidDate = (date) => {
-  if (date && date !== "") {
+  if (date) {
     const currentDate = new Date();
     const endYear = currentDate.getFullYear();
     const endMonth = currentDate.getMonth() + 1;

@@ -5,6 +5,7 @@ import {
   minLength,
   maxLength,
   alpha,
+  numeric,
 } from "@vuelidate/validators";
 import { state } from "../store/personalFields";
 import { isValidDate, isValidPhoneNumber } from "./validators";
@@ -38,6 +39,10 @@ const rules = {
     isValidPhoneNumber: helpers.withMessage(
       "Номер телефона должен начинаться с цифры 7",
       isValidPhoneNumber
+    ),
+    numeric: helpers.withMessage(
+      "Номер телефона должен содержать только цифры",
+      numeric
     ),
   },
   clientGroup: {
