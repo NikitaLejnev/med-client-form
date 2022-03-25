@@ -6,6 +6,7 @@ import TextField from "./TextField.vue";
 import DateInput from "./DateInput.vue";
 import ErrorDisplay from "./ErrorDisplay.vue";
 import NextStepButton from "./NextStepButton.vue";
+const emit = defineEmits(["stepCompleted"]);
 </script>
 
 <template>
@@ -16,7 +17,11 @@ import NextStepButton from "./NextStepButton.vue";
     <form
       @submit.prevent="
         async () => {
-          await this.v$.$validate();
+          const isValid = await this.v$.$validate();
+          if (!isValid) {
+            return;
+          }
+          emit('stepCompleted');
         }
       "
     >

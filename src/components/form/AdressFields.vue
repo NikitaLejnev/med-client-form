@@ -4,6 +4,7 @@ import { adressFields } from "../../utils/helpers";
 import { v$ } from "../../validations/adressFields";
 import TextField from "./TextField.vue";
 import NextStepButton from "./NextStepButton.vue";
+const emit = defineEmits(["stepCompleted"]);
 </script>
 
 <template>
@@ -14,7 +15,11 @@ import NextStepButton from "./NextStepButton.vue";
     <form
       @submit.prevent="
         async () => {
-          await this.v$.$validate();
+          const isValid = await this.v$.$validate();
+          if (!isValid) {
+            return;
+          }
+          emit('stepCompleted');
         }
       "
     >
