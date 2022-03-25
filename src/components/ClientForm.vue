@@ -6,6 +6,9 @@ import DocumentFields from "./form/DocumentFields.vue";
 const state = reactive({
   currentStep: 1,
 });
+const goToNextStep = () => {
+  state.currentStep += 1;
+};
 </script>
 
 <template>
@@ -15,9 +18,18 @@ const state = reactive({
     </header>
 
     <main class="card-body">
-      <PersonalFields v-if="state.currentStep === 1" />
-      <AdressFields v-if="state.currentStep === 2" />
-      <DocumentFields v-if="state.currentStep === 3" />
+      <PersonalFields
+        @step-completed="goToNextStep"
+        v-if="state.currentStep === 1"
+      />
+      <AdressFields
+        @step-completed="goToNextStep"
+        v-if="state.currentStep === 2"
+      />
+      <DocumentFields
+        @step-completed="goToNextStep"
+        v-if="state.currentStep === 3"
+      />
     </main>
   </div>
 </template>
