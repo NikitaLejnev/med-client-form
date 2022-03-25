@@ -1,6 +1,5 @@
-$font-stack: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
-  Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji",
-  "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+$font-stack: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans",
+  sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 $bg-color: #22b2ea;
 
 *,
@@ -13,4 +12,5 @@ html {
   font-family: $font-stack;
   display: flex;
   flex-direction: column;
+  font-size: 20px;
 }
