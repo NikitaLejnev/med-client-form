@@ -1,7 +1,11 @@
 <script setup>
+import { reactive } from "vue";
 import PersonalFields from "./form/PersonalFields.vue";
 import AdressFields from "./form/AdressFields.vue";
 import DocumentFields from "./form/DocumentFields.vue";
+const state = reactive({
+  currentStep: 1,
+});
 </script>
 
 <template>
@@ -11,11 +15,9 @@ import DocumentFields from "./form/DocumentFields.vue";
     </header>
 
     <main class="card-body">
-      <form>
-        <PersonalFields />
-        <AdressFields />
-        <DocumentFields />
-      </form>
+      <PersonalFields v-if="state.currentStep === 1" />
+      <AdressFields v-if="state.currentStep === 2" />
+      <DocumentFields v-if="state.currentStep === 3" />
     </main>
   </div>
 </template>
