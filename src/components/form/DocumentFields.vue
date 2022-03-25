@@ -41,7 +41,7 @@ import NextStepButton from "./NextStepButton.vue";
         property="issueDate"
         >Дата выдачи</DateInput
       >
-      <NextStepButton :v$="v$">Далее</NextStepButton>
+      <NextStepButton :v$="v$">Зарегистрировать</NextStepButton>
     </form>
   </main>
 </template>
