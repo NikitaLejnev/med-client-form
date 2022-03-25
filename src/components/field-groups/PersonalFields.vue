@@ -89,10 +89,10 @@ const emit = defineEmits(["stepCompleted"]);
           <option value="chernysheva">Чернышева</option>
         </select>
       </div>
-      <div class="input-group">
-        <label for="no-sms">Не отправлять СМС</label>
+      <div class="form-check">
+        <label class="form-check-label" for="no-sms">Не отправлять СМС</label>
         <input
-          class="checkbox"
+          class="form-check-input"
           type="checkbox"
           v-model="state.noSms"
           id="no-sms"
