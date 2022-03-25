@@ -8,7 +8,6 @@ const rules = {
     required: helpers.withMessage("Укажите тип документа", required),
   },
   issueDate: {
-    required: helpers.withMessage("Укажите дату выдачи документа", required),
     isValidDate: helpers.withMessage(
       "Укажите корректную дату выдачи документа",
       isValidDate

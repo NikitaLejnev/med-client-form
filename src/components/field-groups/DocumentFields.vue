@@ -6,6 +6,7 @@ import TextField from "./form-components/TextField.vue";
 import DateInput from "./form-components/DateInput.vue";
 import ErrorDisplay from "./form-components/ErrorDisplay.vue";
 import NextStepButton from "./form-components/NextStepButton.vue";
+import RequiredIndicator from "./form-components/RequiredIndicator.vue";
 const emit = defineEmits(["stepCompleted"]);
 </script>
 
@@ -26,6 +27,7 @@ const emit = defineEmits(["stepCompleted"]);
       "
     >
       <div class="input-group">
+        <RequiredIndicator />
         <label class="select-label" for="document-type">Тип документа</label>
         <select id="document-type" v-model="state.documentType">
           <option value="passport">Паспорт</option>
@@ -44,6 +46,7 @@ const emit = defineEmits(["stepCompleted"]);
         id="issue-date"
         v-model="state.issueDate"
         property="issueDate"
+        required="true"
         >Дата выдачи</DateInput
       >
       <NextStepButton :v$="v$">Зарегистрировать</NextStepButton>

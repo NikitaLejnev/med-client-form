@@ -124,7 +124,6 @@ form {
 }
 
 input {
-  display: block;
   font-size: 20px;
   border-radius: 0.25rem;
   border: 1px solid #ced4da;
@@ -205,6 +204,12 @@ button {
   color: #0f5132;
   background-color: #d1e7dd;
   border-color: #badbcc;
+}
+
+.required {
+  font-weight: bold;
+  color: #ff0015;
+  margin-right: 0.5rem;
 }
 /*# sourceMappingURL=styles.scss.map */
 /*# sourceMappingURL=styles.scss.map */

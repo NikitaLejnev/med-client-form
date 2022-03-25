@@ -4,6 +4,7 @@ import PersonalFields from "./field-groups/PersonalFields.vue";
 import AdressFields from "./field-groups/AdressFields.vue";
 import DocumentFields from "./field-groups/DocumentFields.vue";
 import SuccessDisplay from "./field-groups/SuccessDisplay.vue";
+import RequiredIndicator from "./field-groups/form-components/RequiredIndicator.vue";
 const state = reactive({
   currentStep: 1,
 });
@@ -19,6 +20,7 @@ const goToNextStep = () => {
     </header>
 
     <main class="card-body">
+      <small><RequiredIndicator />- поле обязательно к заполнению</small>
       <PersonalFields
         @step-completed="goToNextStep"
         v-if="state.currentStep === 1"

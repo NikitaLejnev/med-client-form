@@ -1,11 +1,13 @@
 <script setup>
 import ErrorDisplay from "./ErrorDisplay.vue";
-defineProps(["v$", "id", "modelValue", "property", "label"]);
+import RequiredIndicator from "./RequiredIndicator.vue";
+defineProps(["v$", "id", "modelValue", "property", "label", "required"]);
 defineEmits(["update:modelValue"]);
 </script>
 
 <template>
   <div class="input-group">
+    <RequiredIndicator v-if="required" />
     <label :for="id">
       {{ label }}
     </label>

@@ -6,6 +6,7 @@ import TextField from "./form-components/TextField.vue";
 import DateInput from "./form-components/DateInput.vue";
 import ErrorDisplay from "./form-components/ErrorDisplay.vue";
 import NextStepButton from "./form-components/NextStepButton.vue";
+import RequiredIndicator from "./form-components/RequiredIndicator.vue";
 const emit = defineEmits(["stepCompleted"]);
 </script>
 
@@ -35,9 +36,11 @@ const emit = defineEmits(["stepCompleted"]);
         id="birth-date"
         v-model="state.birthDate"
         property="birthDate"
+        required="true"
         >Дата рождения</DateInput
       >
       <div class="input-group">
+        <RequiredIndicator />
         <label for="phone-number">Номер телефона</label>
         <input
           class="text-field"
@@ -68,6 +71,7 @@ const emit = defineEmits(["stepCompleted"]);
         <label class="form-check-label" for="female">Женщина</label>
       </div>
       <div class="input-group">
+        <RequiredIndicator />
         <label class="select-label" for="client-group">Группа клиентов</label>
         <select
           class="input-select-multiple"
