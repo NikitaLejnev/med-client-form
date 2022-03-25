@@ -10,3 +10,10 @@ export const isValidDate = (date) => {
 
 export const isValidPhoneNumber = (number) =>
   !helpers.req(number) || number.indexOf(7) === 0;
+
+export const isValidName = (name) => {
+  if (name !== "") {
+    const nameRegex = /[a-zA-Zа-яА-Я]+/;
+    return nameRegex.test(name);
+  }
+};

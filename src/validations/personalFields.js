@@ -4,20 +4,25 @@ import {
   helpers,
   minLength,
   maxLength,
-  alpha,
   numeric,
 } from "@vuelidate/validators";
 import { state } from "../store/personalFields";
-import { isValidDate, isValidPhoneNumber } from "./validators";
+import { isValidDate, isValidPhoneNumber, isValidName } from "./validators";
 
 const rules = {
   firstName: {
     required: helpers.withMessage("Укажите имя", required),
-    alpha: helpers.withMessage("В имени должны быть только буквы", alpha),
+    isValidName: helpers.withMessage(
+      "В имени должны быть только буквы",
+      isValidName
+    ),
   },
   lastName: {
     required: helpers.withMessage("Укажите фамилию", required),
-    alpha: helpers.withMessage("В фамилии должны быть только буквы", alpha),
+    isValidName: helpers.withMessage(
+      "В фамилии должны быть только буквы",
+      isValidName
+    ),
   },
   birthDate: {
     isValidDate: helpers.withMessage(

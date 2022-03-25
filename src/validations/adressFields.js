@@ -1,13 +1,14 @@
 import useVuelidate from "@vuelidate/core";
-import { required, helpers, alpha } from "@vuelidate/validators";
+import { required, helpers } from "@vuelidate/validators";
 import { state } from "../store/adressFields";
+import { isValidName } from "./validators";
 
 const rules = {
   city: {
     required: helpers.withMessage("Укажите город", required),
-    alpha: helpers.withMessage(
+    isValidName: helpers.withMessage(
       "В названии города должны быть только буквы",
-      alpha
+      isValidName
     ),
   },
 };
