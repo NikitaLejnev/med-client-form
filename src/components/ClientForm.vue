@@ -15,9 +15,9 @@ import SubmitButton from "./form/SubmitButton.vue";
     <main class="card-body">
       <form>
         <PersonalFields />
-        <!-- <AdressFields />
-        <DocumentFields />
-        <SubmitButton /> -->
+        <AdressFields />
+        <!-- <DocumentFields /> -->
+        <!-- <SubmitButton /> -->
       </form>
     </main>
   </div>

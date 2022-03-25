@@ -53,6 +53,9 @@ const rules = {
       isValidPhoneNumber
     ),
   },
+  clientGroup: {
+    required: helpers.withMessage("Укажите группу клиента", required),
+  },
 };
 
 export const v$ = useVuelidate(rules, state, { $autoDirty: true });
