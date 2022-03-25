@@ -47,24 +47,25 @@ const emit = defineEmits(["stepCompleted"]);
         />
       </div>
       <ErrorDisplay :v$="v$" property="phoneNumber" />
-      <div class="input-group">
-        <label class="form-label">Пол</label>
+      <div class="form-check">
         <input
-          class="radio-button"
+          class="form-check-input"
           type="radio"
           v-model="state.gender"
           id="male"
           value="male"
         />
-        <label class="radio-button-label" for="male">Мужчина</label>
+        <label class="form-check-label" for="male">Мужчина</label>
+      </div>
+      <div class="form-check">
         <input
-          class="radio-button"
+          class="form-check-input"
           type="radio"
           v-model="state.gender"
           id="female"
           value="female"
         />
-        <label class="radio-button-label" for="female">Женщина</label>
+        <label class="form-check-label" for="female">Женщина</label>
       </div>
       <div class="input-group">
         <label class="select-label" for="client-group">Группа клиентов</label>
