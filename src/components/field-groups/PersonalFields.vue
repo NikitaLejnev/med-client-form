@@ -2,10 +2,10 @@
 import { state } from "../../store/personalFields";
 import { personalFields } from "../../utils/helpers";
 import { v$ } from "../../validations/personalFields";
-import TextField from "./TextField.vue";
-import DateInput from "./DateInput.vue";
-import ErrorDisplay from "./ErrorDisplay.vue";
-import NextStepButton from "./NextStepButton.vue";
+import TextField from "./form-components/TextField.vue";
+import DateInput from "./form-components/DateInput.vue";
+import ErrorDisplay from "./form-components/ErrorDisplay.vue";
+import NextStepButton from "./form-components/NextStepButton.vue";
 const emit = defineEmits(["stepCompleted"]);
 </script>
 

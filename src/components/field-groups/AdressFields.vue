@@ -2,8 +2,8 @@
 import { state } from "../../store/adressFields";
 import { adressFields } from "../../utils/helpers";
 import { v$ } from "../../validations/adressFields";
-import TextField from "./TextField.vue";
-import NextStepButton from "./NextStepButton.vue";
+import TextField from "./form-components/TextField.vue";
+import NextStepButton from "./form-components/NextStepButton.vue";
 const emit = defineEmits(["stepCompleted"]);
 </script>
 

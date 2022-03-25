@@ -1,9 +1,9 @@
 <script setup>
 import { reactive } from "vue";
-import PersonalFields from "./form/PersonalFields.vue";
-import AdressFields from "./form/AdressFields.vue";
-import DocumentFields from "./form/DocumentFields.vue";
-import SuccessDisplay from "./form/SuccessDisplay.vue";
+import PersonalFields from "./field-groups/PersonalFields.vue";
+import AdressFields from "./field-groups/AdressFields.vue";
+import DocumentFields from "./field-groups/DocumentFields.vue";
+import SuccessDisplay from "./field-groups/SuccessDisplay.vue";
 const state = reactive({
   currentStep: 1,
 });
