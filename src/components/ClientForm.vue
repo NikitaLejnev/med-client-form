@@ -3,6 +3,7 @@ import { reactive } from "vue";
 import PersonalFields from "./form/PersonalFields.vue";
 import AdressFields from "./form/AdressFields.vue";
 import DocumentFields from "./form/DocumentFields.vue";
+import SuccessDisplay from "./form/SuccessDisplay.vue";
 const state = reactive({
   currentStep: 1,
 });
@@ -30,6 +31,7 @@ const goToNextStep = () => {
         @step-completed="goToNextStep"
         v-if="state.currentStep === 3"
       />
+      <SuccessDisplay v-if="state.currentStep === 4" />
     </main>
   </div>
 </template>
